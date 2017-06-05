@@ -1,0 +1,9 @@
+#!/bin/bash
+
+set -e
+set -o xtrace
+
+# Enable and start service
+systemctl enable redis.service
+systemctl start redis.service
+systemctl status redis.service
