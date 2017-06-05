@@ -55,8 +55,8 @@ if [ ! -d /var/run/mysqld ]; then
 fi
 
 MYSQL_SYSTEMD_D="/etc/sytemd/system/mysqld.service.d"
-if [ ! -d $MYSQL_SYSTEND ]; then
+if [ ! -d $MYSQL_SYSTEND_D ]; then
     mkdir -p $MYSQL_SYSTEMD_D
 fi
 echo "[Service]" > $MYSQL_SYSTEMD_D/limits.conf
-echo "LimitNOFILE=65535" >> $MYSQL_SYSTEND_D/limits.conf
+echo "LimitNOFILE=65535" >> $MYSQL_SYSTEMD_D/limits.conf
