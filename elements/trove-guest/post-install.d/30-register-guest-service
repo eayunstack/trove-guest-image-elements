@@ -12,6 +12,8 @@ if [ "${DISTRO}" != "ubuntu" ]; then
     chown trove:trove /usr/share/trove
     chown trove:trove /var/log/trove
     #sudo mv /etc/trove/guest_info /etc/guest_info
+    cp /etc/trove/trove-guestagent.conf /etc/trove-guestagent.conf
+    chgrp trove /etc/trove-guestagent.conf
     mv /etc/trove/trove-guestagent.conf /etc/trove/trove-guestagent.conf-$(date +%F-%H%M%S).back
     ln -s /etc/trove-guestagent.conf /etc/trove/trove-guestagent.conf
     #sudo chmod 0755 /etc/guest_info
