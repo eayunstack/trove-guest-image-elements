@@ -1,0 +1,19 @@
+#!/bin/sh
+
+# CONTEXT: GUEST during CONSTRUCTION as ROOT
+# PURPOSE: Install controller base required packages
+
+set -e
+set -o xtrace
+
+# epel redis 2.8
+#yum install redis
+
+# redis 2.8
+yum -y install http://redis.obs.eayun.com:9090/redis-2.8.21-1.el7.x86_64.rpm
+# redis 3.0
+#yum -y install http://redis.obs.eayun.com:9090/redis-3.0.6-1.el7.x86_64.rpm
+# redis 3.2
+#yum -y install http://redis.obs.eayun.com:9090/redis-3.2.8-1.el7.x86_64.rpm
+
+yum -y install python-redis
