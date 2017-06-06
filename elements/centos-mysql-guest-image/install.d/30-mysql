@@ -11,9 +11,6 @@ yum install -y vim
 
 yum remove -y mariadb-libs mariadb-config mariadb-common
 
-wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm
-rpm -ivh mysql-community-release-el7-5.noarch.rpm
-
 # mysql 5.5
 #sed -i "19s/enabled=0/enabled=1/" /etc/yum.repos.d/mysql-community.repo
 #sed -i "27s/enabled=1/enabled=0/" /etc/yum.repos.d/mysql-community.repo
@@ -54,8 +51,8 @@ if [ ! -d /var/run/mysqld ]; then
     chown mysql. /var/run/mysqld
 fi
 
-MYSQL_SYSTEMD_D="/etc/sytemd/system/mysqld.service.d"
-if [ ! -d $MYSQL_SYSTEND_D ]; then
+MYSQL_SYSTEMD_D="/etc/systemd/system/mysqld.service.d"
+if [ ! -d $MYSQL_SYSTEMD_D ]; then
     mkdir -p $MYSQL_SYSTEMD_D
 fi
 echo "[Service]" > $MYSQL_SYSTEMD_D/limits.conf
