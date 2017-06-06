@@ -54,8 +54,8 @@ if [ ! -d /var/run/mysqld ]; then
     chown mysql. /var/run/mysqld
 fi
 
-MYSQL_SYSTEMD_D="/etc/sytemd/system/mysqld.service.d"
-if [ ! -d $MYSQL_SYSTEND_D ]; then
+MYSQL_SYSTEMD_D="/etc/systemd/system/mysqld.service.d"
+if [ ! -d $MYSQL_SYSTEMD_D ]; then
     mkdir -p $MYSQL_SYSTEMD_D
 fi
 echo "[Service]" > $MYSQL_SYSTEMD_D/limits.conf
